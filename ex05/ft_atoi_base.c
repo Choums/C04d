@@ -6,7 +6,7 @@
 /*   By: chaidel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:40:00 by chaidel           #+#    #+#             */
-/*   Updated: 2021/07/08 14:09:01 by chaidel          ###   ########.fr       */
+/*   Updated: 2021/07/08 15:31:59 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+int	ft_isspace(int c)
+{
+	if ((c >= 9 && c <= 13) || c == -1 || c == 32)
+		return (1);
+	return (0);
 }
 
 int	ft_checkbase(char *str)

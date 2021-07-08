@@ -6,7 +6,7 @@
 /*   By: chaidel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:55:49 by chaidel           #+#    #+#             */
-/*   Updated: 2021/07/08 14:07:50 by chaidel          ###   ########.fr       */
+/*   Updated: 2021/07/08 15:25:55 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	unsigned int	len;
 	int				i;
 	unsigned int	n;
-	int				dis[20];
+	int				dis[50];
 
 	i = 0;
 	len = 0;
