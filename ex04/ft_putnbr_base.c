@@ -6,7 +6,7 @@
 /*   By: chaidel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 13:55:49 by chaidel           #+#    #+#             */
-/*   Updated: 2021/07/08 15:25:55 by chaidel          ###   ########.fr       */
+/*   Updated: 2021/07/14 14:51:20 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_checkbase(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] == '-' || str[i] == '+' || str[i] <= 32)
+		if (str[i] == '-' || str[i] == '+' || str[i] < 32)
 			return (0);
 		j = i + 1;
 		while (str[j])
@@ -48,22 +48,17 @@ int	ft_checkbase(char *str)
 		}
 		i++;
 	}
-	if (i < 1)
-		return (0);
 	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	len;
-	int				i;
 	unsigned int	n;
-	int				dis[50];
 
-	i = 0;
-	len = 0;
 	if (ft_checkbase(base))
 	{
+		len _ ft_strlen(base);
 		if (nbr < 0)
 		{
 			ft_putchar('-');
@@ -71,13 +66,12 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 		else
 			n = nbr;
-		len = ft_strlen(base);
-		while (n > 0)
+		if (n >= len)
 		{
-			dis[i++] = n % len;
-			n /= len;
+			ft_putnbr_base(n / len, base);
+			ft_putnbr_base(n % len, base);
 		}
-		while (--i >= 0)
-			ft_putchar(base[dis[i]]);
+		else
+			ft_putchar(base[n]);
 	}
 }
